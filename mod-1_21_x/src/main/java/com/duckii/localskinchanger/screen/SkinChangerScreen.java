@@ -47,7 +47,7 @@ public final class SkinChangerScreen extends Screen {
 
 	@Override
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-		this.renderBackground(context);
+		this.renderBackground(context, mouseX, mouseY, delta);
 		context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
 
 		AvailableSkin selected = LocalSkinChangerClient.selectedSkin();
@@ -71,9 +71,8 @@ public final class SkinChangerScreen extends Screen {
 			texture = com.duckii.localskinchanger.skin.SkinRegistry.textureFor(MinecraftClient.getInstance(), skin);
 		}
 		if (texture != null) {
-			context.drawTexture(texture, x, y, 0, 0, 64, 64, 64, 64);
+			context.drawTexturedQuad(texture, x, y, x + 64, y + 64, 0.0f, 1.0f, 0.0f, 1.0f);
 		}
 		context.drawCenteredTextWithShadow(this.textRenderer, Text.literal(skin.displayName()), x + 32, y + 70, 0xFFFFFF);
 	}
 }
-

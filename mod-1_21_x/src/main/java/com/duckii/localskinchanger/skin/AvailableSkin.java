@@ -48,11 +48,10 @@ public enum AvailableSkin {
 	}
 
 	public Identifier assetIdentifier() {
-		return new Identifier(LocalSkinChangerClient.MOD_ID, assetPath);
+		return Identifier.of(LocalSkinChangerClient.MOD_ID, assetPath);
 	}
 
 	public static Optional<AvailableSkin> byId(String id) {
 		return Arrays.stream(values()).filter(s -> s.id.equals(id)).findFirst();
 	}
 }
-

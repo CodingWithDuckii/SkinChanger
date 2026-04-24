@@ -24,7 +24,7 @@ public final class SkinRegistry {
 			return cached;
 		}
 
-		Identifier runtimeId = new Identifier(LocalSkinChangerClient.MOD_ID, "runtime/skin/" + skin.id());
+		Identifier runtimeId = Identifier.of(LocalSkinChangerClient.MOD_ID, "runtime/skin/" + skin.id());
 		Optional<Resource> resource = client.getResourceManager().getResource(skin.assetIdentifier());
 		if (resource.isEmpty()) {
 			return null;
@@ -32,7 +32,7 @@ public final class SkinRegistry {
 
 		try (InputStream in = resource.get().getInputStream()) {
 			NativeImage image = NativeImage.read(in);
-			NativeImageBackedTexture texture = new NativeImageBackedTexture(image);
+			NativeImageBackedTexture texture = new NativeImageBackedTexture(() -> LocalSkinChangerClient.MOD_ID + "/" + skin.id(), image);
 			client.getTextureManager().registerTexture(runtimeId, texture);
 			RUNTIME_TEXTURES.put(skin, runtimeId);
 			return runtimeId;
@@ -41,4 +41,3 @@ public final class SkinRegistry {
 		}
 	}
 }
-
