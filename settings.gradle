@@ -1,0 +1,17 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = "local-skin-changer"
+
+include("mod-1_20_4")
+include("mod-1_21_x")
+include("mod-26_x")
+

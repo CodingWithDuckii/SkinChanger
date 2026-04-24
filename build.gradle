@@ -1,0 +1,31 @@
+allprojects {
+	apply plugin: "java"
+
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
+		mavenCentral()
+	}
+
+	group = project.maven_group
+	version = project.mod_version
+}
+
+subprojects {
+	tasks.withType(JavaCompile).configureEach {
+		options.encoding = "UTF-8"
+	}
+
+	java {
+		withSourcesJar()
+	}
+
+	jar {
+		from(rootProject.file("LICENSE")) {
+			rename { "${it}_${project.archivesBaseName}" }
+		}
+	}
+}
+

@@ -1,0 +1,47 @@
+buildscript {
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
+		mavenCentral()
+	}
+	dependencies {
+		classpath "net.fabricmc:fabric-loom:1.15"
+	}
+}
+
+apply plugin: "net.fabricmc.fabric-loom-remap"
+apply plugin: "maven-publish"
+
+base {
+	archivesName = "${project.mod_id}-mc${project.minecraft_version_1_21_x}"
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version_1_21_x}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings_1_21_x}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version_1_21_x}"
+}
+
+loom {
+	mods {
+		"${project.mod_id}" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+processResources {
+	inputs.property "version", project.version
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "local_skin_changer",
+  "version": "${version}",
+  "name": "Local Skin Changer",
+  "description": "Client-side skin picker that only changes your local rendered player skin.",
+  "authors": [
+    "duckii"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.duckii.localskinchanger.LocalSkinChangerClient"
+    ]
+  },
+  "mixins": [
+    "local_skin_changer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "fabric-api": "*",
+    "minecraft": "1.21.6"
+  }
+}
+
