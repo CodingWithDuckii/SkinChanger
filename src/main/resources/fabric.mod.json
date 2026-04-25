@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "skinchanger",
+	"version": "${version}",
+	"name": "Skin Changer",
+	"description": "A client-side mod to change your player skin locally.",
+	"authors": [
+		"duckii"
+	],
+	"contact": {
+		"homepage": "https://github.com/CodingWithDuckii/SkinChanger",
+		"sources": "https://github.com/CodingWithDuckii/SkinChanger"
+	},
+	"license": "MIT",
+	"icon": "assets/skinchanger/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.duckii.skinchanger.SkinChangerMod"
+		],
+		"client": [
+			"com.duckii.skinchanger.client.SkinChangerClient"
+		]
+	},
+	"mixins": [
+		"skinchanger.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": ">=1.21 <1.27",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

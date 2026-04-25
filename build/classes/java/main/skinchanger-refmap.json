@@ -1,0 +1,26 @@
+{
+  "mappings": {
+    "com/duckii/skinchanger/mixin/AbstractClientPlayerEntityMixin": {
+      "getSkinTextures": "Lnet/minecraft/class_742;method_52814()Lnet/minecraft/class_8685;"
+    },
+    "com/duckii/skinchanger/mixin/GameMenuScreenMixin": {
+      "initWidgets": "Lnet/minecraft/class_433;method_20543()V"
+    },
+    "com/duckii/skinchanger/mixin/InventoryScreenMixin": {
+      "init": "Lnet/minecraft/class_490;method_25426()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/duckii/skinchanger/mixin/AbstractClientPlayerEntityMixin": {
+        "getSkinTextures": "Lnet/minecraft/class_742;method_52814()Lnet/minecraft/class_8685;"
+      },
+      "com/duckii/skinchanger/mixin/GameMenuScreenMixin": {
+        "initWidgets": "Lnet/minecraft/class_433;method_20543()V"
+      },
+      "com/duckii/skinchanger/mixin/InventoryScreenMixin": {
+        "init": "Lnet/minecraft/class_490;method_25426()V"
+      }
+    }
+  }
+}
