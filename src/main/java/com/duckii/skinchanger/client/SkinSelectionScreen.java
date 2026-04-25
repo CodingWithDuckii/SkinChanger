@@ -14,7 +14,7 @@ public class SkinSelectionScreen extends Screen {
     private static final int BUTTON_HEIGHT = 20;
     private static final int PADDING = 10;
 
-    protected SkinSelectionScreen() {
+    public SkinSelectionScreen() {
         super(Text.translatable("gui.skinchanger.title"));
     }
 
